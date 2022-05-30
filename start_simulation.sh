@@ -12,7 +12,7 @@
 #    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #    See the License for the specific language governing permissions and
 #    limitations under the License.
-colcon build --symlink-install --allow-overriding communication_interfaces launch_turtlebot_gazebo ros2swarm &&
+colcon build --symlink-install --allow-overriding communication_interfaces launch_turtlebot_gazebo ros2swarm turtlebot3_description &&
  source ./install/setup.bash && 
  ROS_DOMAIN_ID=42 ros2 launch launch_turtlebot_gazebo create_enviroment.launch.py \
  gazebo_world:=arena_large.world \
