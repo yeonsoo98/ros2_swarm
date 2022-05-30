@@ -67,17 +67,17 @@ The following table gives an overview the current implemented patterns.
 The patterns are separated into movement and voting patterns. 
 Every pattern can either be a basic pattern or a combined one, which make use of one or more other patterns to create more complex behaviors.
 
-| Pattern                  | Domain   | Type     | Simulation          | Robot  |
-| ------                   | ------   | ------   | ------              | ------ |
-| drive                    | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark: |
-| dispersion               | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark: |
-| attraction               | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark: |
-| magnetometer             | Movement | Basic    | :x:                 | :heavy_check_mark: |
-| minimalist flocking      | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark: |
-| random walk      | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark: |
-| discussed dispersion pattern                 | Movement | Combined | :heavy_check_mark:  | :heavy_check_mark: |
-| voter model              | Voting   | Basic    | :heavy_check_mark:  | :heavy_check_mark: |
-| majority rule            | Voting   | Basic    | :heavy_check_mark:  | :heavy_check_mark: |
+| Pattern                  | Domain   | Type     | Simulation          | Robot                | Description |
+| ------                   | ------   | ------   | ------              | ------               | ------ | 
+| drive                    | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark:   | | 
+| dispersion               | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark:   | | 
+| attraction               | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark:   | | 
+| magnetometer             | Movement | Basic    | :x:                 | :heavy_check_mark:   | | 
+| minimalist flocking      | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark:   | | 
+| random walk      | Movement | Basic    | :heavy_check_mark:  | :heavy_check_mark:           |         | 
+| discussed dispersion pattern                 | Movement | Combined | :heavy_check_mark:| :heavy_check_mark: |  | 
+| voter model              | Voting   | Basic    | :heavy_check_mark:  | :heavy_check_mark:   | | 
+| majority rule            | Voting   | Basic    | :heavy_check_mark:  | :heavy_check_mark:   | | 
 
 In addition, a hardware protection layer is started to prevent collisions.
 
