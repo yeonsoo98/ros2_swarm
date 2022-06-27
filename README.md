@@ -1,5 +1,54 @@
 ## **Manual ROS2swarm Version 1.1.0**
+###  Instsll turtlebot3 package
 
+The ROS2swarm package only supports the following commits of the turtlebot3 packages.
+
+turtelbot3
+
+```
+cd  ~/turtlebot3_ws/src/turtlebot3
+git checkout 8237b796ea1571033bf3230fbc78d1143968ddd1
+```
+
+turtlebot3_msgs
+
+```
+cd ~/turtlebot3_ws/src/turtlebot3_msgs
+git checkout cf5c56be94b335b1d2c9817bd2dcaceec21ccc68
+```
+
+turtlebot3_simulations:
+```
+cd ~/turtlebot3_ws/src/turtlebot3_simulations
+git checkout f5d86bbeb614f46a176f47b3697c85a8a9b989f9
+```
+
+Set the gazebo model path
+```
+echo 'export GAZEBO_MODEL_PATH=$GAZEBO_MODEL_PATH:~/turtlebot3_ws/src/turtlebot3_simulations/turtlebot3_gazebo/models' >> ~/.bashrc
+```
+
+build turtlebot3 packages
+```
+cd ~/turtlebot3_ws && colcon build --symlink-install
+echo 'export TURTLEBOT3_MODEL=waffle_pi' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Test World
+```
+ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py
+```
+
+ROS2SWARM Package Gazebo Simulation Test
+```
+cd ~/ros2swarm
+./start_simulation.sh
+```
+-> check the model 
+
+
+-----------------------------------
 ROS2swarm is a ROS 2 (Dashing, Foxy) package that provides swarm behavior patterns. 
 It is developed by the **Institute of Computer Engineering** with support from the Institute of Robotics and the Institute for Electrical Engineering in Medicine of the **University of Lübeck, Germany**. 
 
