@@ -109,15 +109,13 @@ def generate_launch_description():
                     '-x', '0.0',
                     '-y', [str(i), '.0'],
                     '-z', '0.1',
-                    '--type_of_robot', robot
+                    '--type_of_robot', robot,
+                    '--number' , str(i)
                 ]
             )
             ld.add_action(gazebo_node)
 
     config_dir = os.path.join(get_package_share_directory('ros2swarm'), 'config', robot_type)
-
-    urdf_file_name = 'turtlebot3_' + robot + '.urdf'
-    urdf_file = os.path.join(get_package_share_directory('turtlebot3_description'), 'urdf', urdf_file_name)
 
     # find out exact path of the patter launch file
     for i in range(number_robots):
@@ -126,6 +124,8 @@ def generate_launch_description():
             for name in files:
                 if name == pattern_launch_file_name:
                     pattern_path = os.path.abspath(os.path.join(root, name))
+        urdf_file_name = 'turtlebot3_' + robot+str(i)+ '.urdf'
+        urdf_file = os.path.join(get_package_share_directory('turtlebot3_description'), 'urdf', urdf_file_name)
 
         # add patterns
         launch_patterns = IncludeLaunchDescription(
