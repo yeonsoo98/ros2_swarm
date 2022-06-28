@@ -48,7 +48,9 @@ def main():
                         help='the z component of the initial position [meters]')
     parser.add_argument('-t', '--type_of_robot', type=str, default='waffle_pi',
                         help='the type of robot')
-
+    parser.add_argument('-num','--number', type=str, default='0',
+                        help='robot_number')
+                        
     args, unknown = parser.parse_known_args()
 
     #TURTLEBOT3_MODEL = os.environ['TURTLEBOT3_MODEL']
@@ -71,9 +73,9 @@ def main():
         get_package_share_directory("turtlebot3_gazebo"), "models",
         "turtlebot3_"+args.type_of_robot,
         #"turtlebot3_"+TURTLEBOT3_MODEL,
-        "model.sdf")
+        "model"+args.number+ ".sdf")
     # TODO add here exportvariable!
-
+    
     print("sdf_file_path: ", sdf_file_path)
 
     node.get_logger().debug('spawning `{}` on namespace `{}` at {}, {}, {}'.format(
