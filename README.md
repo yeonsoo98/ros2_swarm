@@ -48,6 +48,18 @@ cd ~/ros2swarm
 -> check the model 
 
 
+## Namespace Setting
+change namespace (turtlebot3_description -> urdf) 
+
+ex) turtlebot3_burger0.urdf ,turtlebot3_burger1.urdf ...
+
+urdf file -> namespace setting 
+
+ex) robot_namespace_0/base_footprint , robot_namespace_0/base_link ...
+
+
+
+
 -----------------------------------
 ROS2swarm is a ROS 2 (Dashing, Foxy) package that provides swarm behavior patterns. 
 It is developed by the **Institute of Computer Engineering** with support from the Institute of Robotics and the Institute for Electrical Engineering in Medicine of the **University of Lübeck, Germany**. 
