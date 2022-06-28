@@ -20,11 +20,11 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from ament_index_python.packages import get_package_share_directory
-
+from launch_ros.actions import Node
 
 def generate_launch_description():
     """Creates the environment with gazebo, add robots and starts their behaviour"""
-
+    
     launch_file_dir = os.path.join(get_package_share_directory('launch_turtlebot_gazebo'))
     launch_pattern_dir = os.path.join(get_package_share_directory('ros2swarm'), 'launch', 'pattern')
     launch_bringup_dir = os.path.join(get_package_share_directory('ros2swarm'))
@@ -86,6 +86,12 @@ def generate_launch_description():
         )
     ])
     ld.add_action(log)
+
+    # Add static_transform_publisher (map)
+    node = Node(package = "tf2_ros", 
+                       executable = "static_transform_publisher",
+                       arguments = ["0","0", "0", "0", "0", "0", "1" ,"map" ," robot_namespace_0/odom"])
+    ld.add_action(node)
 
     if gazebo_flag:
         # Add gazebo start script
