@@ -88,10 +88,20 @@ def generate_launch_description():
     ld.add_action(log)
 
     # Add static_transform_publisher (map)
-    node = Node(package = "tf2_ros", 
-                       executable = "static_transform_publisher",
-                       arguments = ["0","0", "0", "0", "0", "0", "1" ,"map" ," robot_namespace_0/odom"])
-    ld.add_action(node)
+    for i in range(number_robots):    
+        tf2_node = launch_ros.actions.Node(
+            package = "tf2_ros", 
+            executable = "static_transform_publisher", 
+            name='static_transform_publisher',
+            output='screen',
+            arguments =['0','0','0','0','0','1','map','robot_namespace_', str(i)/odom]
+            # arguments = ['--x', '0', '--y', '0', '--z', '0',
+            #             '--yaw', '0', '--pitch', '0', '--roll', '0',
+            #             '--frame-id', 'map',
+            #             '--child-frame-id', 'robot_namespace_0/odom'],
+            )
+
+        ld.add_action(tf2_node)
 
     if gazebo_flag:
         # Add gazebo start script
