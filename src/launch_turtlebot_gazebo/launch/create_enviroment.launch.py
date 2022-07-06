@@ -94,7 +94,7 @@ def generate_launch_description():
             executable = "static_transform_publisher", 
             name='static_transform_publisher',
             output='screen',
-            arguments =['0','0','0','0','0','1','map','robot_namespace_', str(i)/odom]
+            arguments =['0','0','0','0','0','0','map','robot_namespace_' + str(i)+'/odom']
             # arguments = ['--x', '0', '--y', '0', '--z', '0',
             #             '--yaw', '0', '--pitch', '0', '--roll', '0',
             #             '--frame-id', 'map',
