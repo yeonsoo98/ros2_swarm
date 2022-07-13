@@ -57,10 +57,37 @@ urdf file -> namespace setting
 
 ex) robot_namespace_0/base_footprint , robot_namespace_0/base_link ...
 
-
-
-
 -----------------------------------
+## Rviz2 
+
+
+<img src="https://user-images.githubusercontent.com/77741178/178693196-a1cee177-b38a-4aa2-bdc2-362a95159f71.png" width="500" height="200">
+
+< open terminal 1 >
+
+```
+# open gazebo world (two turtlebot3)
+cd ros2swarm
+./start simulation.sh
+```
+<img src="https://user-images.githubusercontent.com/77741178/178693463-327f2340-2931-4ffc-a855-15d757db08a6.png" width="500" height="200">
+
+< open terminal 2 >
+```
+# open rviz2
+rviz2
+-> file -> Open config -> ros2swarm -> rviz -> two_turtlebot3.rviz 
+```
+
+<img src="https://user-images.githubusercontent.com/77741178/178694333-e33a0549-9482-491d-9d41-32e00bf920de.png" width="500" height="200">
+< open terminal 3>
+```
+# moving robot in gazebo and rviz2  
+cd ros2swarm
+./start_command.sh
+```
+
+--------------------------
 ROS2swarm is a ROS 2 (Dashing, Foxy) package that provides swarm behavior patterns. 
 It is developed by the **Institute of Computer Engineering** with support from the Institute of Robotics and the Institute for Electrical Engineering in Medicine of the **University of Lübeck, Germany**. 
 
