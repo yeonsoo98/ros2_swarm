@@ -81,8 +81,10 @@ rviz2
 
 <img src="https://user-images.githubusercontent.com/77741178/178694333-e33a0549-9482-491d-9d41-32e00bf920de.png" width="500" height="200">
 < open terminal 3>
+
 ```
 # moving robot in gazebo and rviz2  
+
 cd ros2swarm
 ./start_command.sh
 ```
