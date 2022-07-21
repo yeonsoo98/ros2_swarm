@@ -89,6 +89,38 @@ cd ros2swarm
 ./start_command.sh
 ```
 
+## Real Robot Setting
+
+< turtlebot3 namespace setting >
+
+ssh turtlebot3@ip_address
+
+change -> ~ /ros2swarm/param/burger.yaml
+
+``` 
+robot_namespace_NUM_CHANGE_ME: 
+ex) robot_namespace_0 -> namespace setting 
+```
+
+turtlebot3 namspace = robot_namespace_0 
+
+change -> ~/turtlebot3_ws/src/turtlebot3_desription/urdf/turtlebot3_burger.urdf
+
+< another turtlebot3 namespace setting >
+
+ssh turtlebot3@ip_address
+
+change -> ~ /ros2swarm/param/burger.yaml
+
+``` 
+robot_namespace_NUM_CHANGE_ME: 
+ex) robot_namespace_1 -> namespace setting 
+```
+
+turtlebot3 namspace = robot_namespace_1 
+
+change -> ~/turtlebot3_ws/src/turtlebot3_desription/urdf/turtlebot3_burger.urdf
+
 --------------------------
 ROS2swarm is a ROS 2 (Dashing, Foxy) package that provides swarm behavior patterns. 
 It is developed by the **Institute of Computer Engineering** with support from the Institute of Robotics and the Institute for Electrical Engineering in Medicine of the **University of Lübeck, Germany**. 
