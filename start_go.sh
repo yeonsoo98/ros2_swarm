@@ -14,13 +14,10 @@
 #    limitations under the License.
 colcon build --symlink-install --allow-overriding communication_interfaces launch_turtlebot_gazebo ros2swarm turtlebot3_description &&
  source ./install/setup.bash && 
- ROS_DOMAIN_ID=42 ros2 launch launch_turtlebot_gazebo create_enviroment.launch.py \
- gazebo_world:=arena_large.world \
- pattern:=aggregation_pattern\
- number_robots:=4 \
+ ROS_DOMAIN_ID=42  \
+ pattern:=drive_pattern\
  log_level:=info \
- robot:=burger
-# gazebo_world arena_large.world | arena.world | empty.world | turtle.world | 560x540m.world | Ymaze.world | Ymaze_camber.world | Ymaze_camber_top.world
+
 # pattern pattern_name
 ## movement pattern:
 #  * drive_pattern
@@ -39,6 +36,4 @@ colcon build --symlink-install --allow-overriding communication_interfaces launc
 #  * voter_model_pattern
 #  * voter_model_with_limiter_pattern
 #  * majority_rule_pattern
-#
-# number_robots num_robots
-# robot: burger | waffle_pi | jackal
+
